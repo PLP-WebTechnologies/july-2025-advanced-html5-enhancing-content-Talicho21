@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive HTML5 Demonstrations</title>
+</head>
+<body>
+
+    <h2>Effective Use of HTML5</h2>
+
+    <p>This document demonstrates the use of several HTML5 features, including lists, tables, media embedding, and a structured, validated form. All elements are built using only HTML5, without any CSS or JavaScript.</p>
+
+    ---
+
+    <h3>Lists and Tables</h3>
+
+    <p>Lists and tables are excellent tools for organizing information. <strong>Unordered lists</strong> (<code>&lt;ul&gt;</code>) are perfect for items where the order doesn't matter, while <strong>ordered lists</strong> (<code>&lt;ol&gt;</code>) are used when sequence is important. Tables (<code>&lt;table&gt;</code>) are ideal for displaying tabular data.</p>
+
+    <h4>Ordered List of Planets:</h4>
+    <ol>
+      <li>Mercury</li>
+      <li>Venus</li>
+      <li>Earth</li>
+      <li>Mars</li>
+      <li>Jupiter</li>
+    </ol>
+
+    <h4>Unordered List of Star Systems:</h4>
+    <ul>
+      <li>Alpha Centauri</li>
+      <li>Sirius</li>
+      <li>Proxima Centauri</li>
+      <li>Vega</li>
+    </ul>
+
+    <h4>Simple Table for Planet Data:</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Planet</th>
+          <th>Diameter (km)</th>
+          <th>Number of Moons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Earth</td>
+          <td>12,742</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Mars</td>
+          <td>6,779</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Jupiter</td>
+          <td>139,820</td>
+          <td>95</td>
+        </tr>
+      </tbody>
+    </table>
+
+    ---
+
+    <h3>Embedding Media Content</h3>
+
+    <p>HTML5 provides semantic tags for embedding different types of media. The <code>&lt;video&gt;</code> tag is used for video, <code>&lt;audio&gt;</code> for audio, and <code>&lt;iframe&gt;</code> for external content like a map. The <code>controls</code> attribute adds playback controls, while <code>poster</code> specifies an image to display before the video starts.</p>
+    <br>
+
+    <h4>Video Example:</h4>
+    <video width="320" height="240" controls poster="https://i.ytimg.com/vi/S-d4G-2E0fM/maxresdefault.jpg">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <br>
+    <br>
+
+    <h4>Audio Example:</h4>
+    <audio controls>
+      <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <br>
+    <br>
+
+    <h4>Iframe Example (Google Maps):</h4>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.25367675276!2d-73.9878201845946!3d40.7484400793282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2596c567a126d%3A0x7a3a96b3a3d2e2d5!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1628173499427!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+    ---
+
+    <h3>HTML5 Forms and Validation</h3>
+
+    <p>Forms are crucial for user interaction. This example shows a simple contact form using various HTML5 attributes for improved usability and <strong>built-in validation</strong>.</p>
+    <ul>
+      <li>The <code>type</code> attribute defines the input type (e.g., <code>email</code>, <code>tel</code>, <code>date</code>).</li>
+      <li>The <code>required</code> attribute ensures a field must be filled out before submission.</li>
+      <li>The <code>pattern</code> attribute enforces a specific input format using a **regular expression** (regex).</li>
+      <li>The <code>min</code> and <code>max</code> attributes set a range for numerical or date inputs.</li>
+      <li>The <code>list</code> attribute links an input to a <code>&lt;datalist&gt;</code> for a predefined set of options.</li>
+    </ul>
+
+    <h4>Contact Form</h4>
+
+    <form action="/submit-form" method="post">
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+      
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" required><br><br>
+
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="favcolor">Favorite Color:</label><br>
+        <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>Message Details</legend>
+        <label for="message_type">Type of Inquiry:</label><br>
+        <input list="inquiry_types" id="message_type" name="message_type"><br>
+        <datalist id="inquiry_types">
+          <option value="General Question">
+          <option value="Technical Support">
+          <option value="Billing">
+          <option value="Feedback">
+        </datalist><br><br>
+        
+        <label for="quantity">Quantity (1-10):</label><br>
+        <input type="number" id="quantity" name="quantity" min="1" max="10" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" cols="30" required></textarea><br><br>
+      </fieldset>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
